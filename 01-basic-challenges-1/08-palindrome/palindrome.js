@@ -38,7 +38,7 @@ function isPalindromeEZ(str) {
   return formattedStr === reversedStr;
 }
 
-console.log('is a palindrome? ', isPalindromeEZ('madam'));
+console.log('is a palindrome EZ? ', isPalindromeEZ('madam'));
 
 function isPalindromeASCII(str) {
   const formattedStr = removeNonAlphaNumeric(str.toLowerCase());
