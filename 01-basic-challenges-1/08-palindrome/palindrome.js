@@ -32,4 +32,12 @@ function isPalindrome(str) {
     return true
 }
 
+function isPalindromeEZ(str) {
+    const formattedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '')
+    const reversedStr = formattedStr.split('').reverse().join('')
+    return formattedStr === reversedStr
+}
+
+console.log('is a palindrome? ', isPalindromeEZ('madam'))
+
 module.exports = isPalindrome;
