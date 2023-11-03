@@ -15,29 +15,29 @@ function arrayIntersection(arr1, arr2) {
   return result;
 }
 
-function arrayIntersectionSet(arr1, arr2) {
-  // create a new Set from first array
-  // create an empty result array
-  // loop thru the second array
-  // if current element is in the Set push current element into set
-  // return result array
-  const set1 = new Set(arr1);
-  let result = [];
-  console.log(set1);
+// function arrayIntersectionSet(arr1, arr2) {
+//   // create a new Set from first array
+//   // create an empty result array
+//   // loop thru the second array
+//   // if current element is in the Set push current element into set
+//   // return result array
+//   const set1 = new Set(arr1);
+//   let result = [];
+//   console.log(set1);
 
-  for (let num of arr2) {
-    console.log(arr2[num]);
-    if (set1.has(num)) {
-      console.log('true');
-      result.push(num);
-    }
-  }
-  return result;
-}
+//   for (let num of arr2) {
+//     console.log(arr2[num]);
+//     if (set1.has(num)) {
+//       console.log('true');
+//       result.push(num);
+//     }
+//   }
+//   return result;
+// }
 
-let result = arrayIntersectionSet([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]);
-console.log(result);
-let result2 = arrayIntersectionSet([10, 20, 30, 40], [30, 40, 50, 60]);
-console.log(result2);
+// let result = arrayIntersectionSet([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]);
+// console.log(result);
+// let result2 = arrayIntersectionSet([10, 20, 30, 40], [30, 40, 50, 60]);
+// console.log(result2);
 
 module.exports = arrayIntersection;
