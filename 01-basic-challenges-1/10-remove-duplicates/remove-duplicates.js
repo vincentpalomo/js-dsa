@@ -7,25 +7,25 @@ function removeDuplicates(arr) {
 
   let removed = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    let isDuplicate = false;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] === arr[j]) {
-        isDuplicate = true;
-        break;
-      }
-    }
-
-    if (!isDuplicate) {
-      removed.push(arr[i]);
-    }
-  }
-
   // for (let i = 0; i < arr.length; i++) {
-  //   if (!removed.includes(arr[i])) {
+  //   let isDuplicate = false;
+  //   for (let j = i + 1; j < arr.length; j++) {
+  //     if (arr[i] === arr[j]) {
+  //       isDuplicate = true;
+  //       break;
+  //     }
+  //   }
+
+  //   if (!isDuplicate) {
   //     removed.push(arr[i]);
   //   }
   // }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!removed.includes(arr[i])) {
+      removed.push(arr[i]);
+    }
+  }
 
   return removed;
 }
