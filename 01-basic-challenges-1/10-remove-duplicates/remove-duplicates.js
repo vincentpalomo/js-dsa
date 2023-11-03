@@ -26,4 +26,11 @@ function removeDuplicates(arr) {
   return removed;
 }
 
+function removeDuplicatesSet(arr) {
+  return Array.from(new Set(arr));
+}
+
+const result = removeDuplicatesSet([1, 2, 3, 4, 4, 5]);
+console.log(result);
+
 module.exports = removeDuplicates;
