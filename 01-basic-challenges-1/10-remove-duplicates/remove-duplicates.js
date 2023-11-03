@@ -7,30 +7,34 @@ function removeDuplicates(arr) {
 
   let removed = [];
 
-  //   for (let i = 0; i < arr.length; i++) {
-  //     for (let j = i + 1; j < arr.length; j++) {
-  //       console.log(arr[i], arr[j]);
-  //       //   if (arr[i] !== arr[j]) {
-  //       //     console.log('adding new to value to removed array');
-  //       //     removed.push(arr[i]);
-  //       //   }
-  //     }
-  //   }
-
   for (let i = 0; i < arr.length; i++) {
-    if (!removed.includes(arr[i])) {
+    let isDuplicate = false;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+
+    if (!isDuplicate) {
       removed.push(arr[i]);
     }
   }
 
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (!removed.includes(arr[i])) {
+  //     removed.push(arr[i]);
+  //   }
+  // }
+
   return removed;
 }
 
-function removeDuplicatesSet(arr) {
-  return Array.from(new Set(arr));
-}
+// function removeDuplicatesSet(arr) {
+//   return Array.from(new Set(arr));
+// }
 
-const result = removeDuplicatesSet([1, 2, 3, 4, 4, 5]);
-console.log(result);
+// const result = removeDuplicatesSet([1, 2, 3, 4, 4, 5]);
+// console.log(result);
 
 module.exports = removeDuplicates;
