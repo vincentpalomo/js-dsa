@@ -33,10 +33,10 @@ function formatPhoneNumber(arr) {
   return `(${formatted.substring(0, 3)}) ${formatted.substring(3, 6)}-${formatted.substring(6)}`;
 }
 
-const formatPhoneNumberAF = (numbers) =>
-  `(${numbers.slice(0, 3).join('')}) ${numbers.slice(3, 6).join('')}-${numbers.slice(6).join('')}`;
+// const formatPhoneNumberAF = (numbers) =>
+//   `(${numbers.slice(0, 3).join('')}) ${numbers.slice(3, 6).join('')}-${numbers.slice(6).join('')}`;
 
-let result = formatPhoneNumberAF([2, 2, 5, 6, 3, 6, 4, 0, 8, 5]);
-console.log(result);
+// let result = formatPhoneNumberAF([2, 2, 5, 6, 3, 6, 4, 0, 8, 5]);
+// console.log(result);
 
 module.exports = formatPhoneNumber;
