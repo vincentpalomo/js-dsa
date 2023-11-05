@@ -5,17 +5,17 @@ function highestScoringWord(str) {
   // Find the maximum sum value among all words.
   // Find the index of the word with the largest sum in the original input string.
   // Return the word with the largest sum.
-  const words = str.split(' ');
+  //   const words = str.split(' ');
 
-  const result = words.map((word) => {
-    return word.split('').map((char) => char.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0) + 1);
-  });
-  const sum = result.map((charArray) => {
-    return charArray.reduce((total, sum) => total + sum, 0);
-  });
-  const maxSum = Math.max(...sum);
-  const indexOfMaxSum = sum.indexOf(maxSum);
-  return words[indexOfMaxSum];
+  //   const result = words.map((word) => {
+  //     return word.split('').map((char) => char.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0) + 1);
+  //   });
+  //   const sum = result.map((charArray) => {
+  //     return charArray.reduce((total, sum) => total + sum, 0);
+  //   });
+  //   const maxSum = Math.max(...sum);
+  //   const indexOfMaxSum = sum.indexOf(maxSum);
+  //   return words[indexOfMaxSum];
   // Split the input string into an array of words using the split method.
   // Use the map method to calculate the score for each word.
   // For each letter in a word, we get its character code using charCodeAt(0)
@@ -47,6 +47,17 @@ function highestScoringWord(str) {
   //   //     }
   //   //   }
   //   return words[highestIndex];
+
+  const words = str.split(' ');
+
+  const scores = words.map((word) => {
+    return Array.from(word).reduce((score, letter) => score + letter.charCodeAt(0) - 96, 0);
+  });
+
+  let highestScore = Math.max(...scores);
+  let highestIndex = scores.indexOf(highestScore);
+
+  return words[highestIndex];
 }
 
 module.exports = highestScoringWord;
