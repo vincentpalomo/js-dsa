@@ -38,21 +38,27 @@ function generateHashtag(str) {
 
   // return hashtag;
 
-  if (str.trim() === '') {
-    return false;
-  }
-
-  const words = str.trim().split(' ');
-
-  const capitalize = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1));
-
-  const hashtag = '#' + capitalize.join('');
-
-  // if (hashtag.length > 140) {
+  // if (str.trim() === '') {
   //   return false;
   // }
 
-  return hashtag.length > 140 ? false : hashtag;
+  // const words = str.trim().split(' ');
+
+  // const capitalize = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1));
+
+  // const hashtag = '#' + capitalize.join('');
+
+  // // if (hashtag.length > 140) {
+  // //   return false;
+  // // }
+
+  // return hashtag.length > 140 ? false : hashtag;
+
+  const hashtag = str.split(' ').reduce((tag, letter) => {
+    return tag + letter.charAt(0).toUpperCase() + letter.substring(1);
+  }, '#');
+
+  return hashtag.length === 1 || hashtag.length > 140 ? false : hashtag;
 }
 
 module.exports = generateHashtag;
