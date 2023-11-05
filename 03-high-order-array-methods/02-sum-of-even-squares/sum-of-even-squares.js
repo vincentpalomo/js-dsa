@@ -8,11 +8,21 @@ function sumOfEvenSquares(numbers) {
     return 0;
   }
 
-  const evenNumbers = numbers.filter((num) => num % 2 === 0);
-  const squaredNumbers = evenNumbers.map((num) => num * num);
-  const sumNumber = squaredNumbers.reduce((total, num) => total + num, 0);
+  // const evenNumbers = numbers.filter((num) => num % 2 === 0);
+  // const squaredNumbers = evenNumbers.map((num) => num * num);
+  // const sumNumber = squaredNumbers.reduce((total, num) => total + num, 0);
 
-  return sumNumber;
+  // you can format filter and map together
+  // const evenSquares = numbers.filter((num) => num % 2 === 0).map((num) => num ** 2);
+
+  // return evenSquares.reduce((sum, square) => sum + square, 0);
+
+  // you can even return with all high order methods
+
+  return numbers
+    .filter((num) => num % 2 === 0)
+    .map((num) => num ** 2)
+    .reduce((total, num) => total + num, 0);
 }
 
 module.exports = sumOfEvenSquares;
