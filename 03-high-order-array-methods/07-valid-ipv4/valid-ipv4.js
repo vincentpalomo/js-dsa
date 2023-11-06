@@ -1,22 +1,21 @@
 const isValidIPv4 = (add) => {
   // split input string by .
-  // if split length is less than 4 or greater than 4 return false
-  // map thru split to check each number inside
-  // if the values are not between 0 - 255 return false
-  // if first value of the number is 088 return false
+  // if split length is not 4 return false
+  // use every higher order method, this will check if all octets are valid
+  // parse the octet number, this will remove the 0 infront of any number in the string
+  // check if the number is between 0 and 255
+  // check if the octet is equal to the number converted back to a string, this is to check for leading 0
 
-  const ipNums = add.split('.').map((numbers) => {
-    if (numbers < 0 || numbers > 255) {
-      return false;
-    }
-    return numbers;
-  });
+  const numbers = add.split('.');
 
-  if (ipNums.length > 4 || ipNums.length < 4) {
+  if (numbers.length !== 4) {
     return false;
   }
 
-  return true;
+  return numbers.every((octet) => {
+    const num = parseInt(octet);
+    return num >= 0 && num <= 255 && octet === num.toString();
+  });
 };
 
 module.exports = isValidIPv4;
