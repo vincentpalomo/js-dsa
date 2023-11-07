@@ -1,15 +1,16 @@
 function fibonacci(num) {
   // base case
-  if (num < 2) {
-    return num;
-  }
+  if (num < 2) return num;
+
   // recursive case
-  const call1 = fibonacci(num - 1);
-  const call2 = fibonacci(num - 2);
-  //   console.log(call1, call2);
-  const result = call1 + call2;
-  //   console.log(result);
-  return result;
+  //   const call1 = fibonacci(num - 1);
+  //   const call2 = fibonacci(num - 2);
+  //   //   console.log(call1, call2);
+  //   const result = call1 + call2;
+  //   //   console.log(result);
+  //   return result;
+  // concise
+  return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
 module.exports = fibonacci;
