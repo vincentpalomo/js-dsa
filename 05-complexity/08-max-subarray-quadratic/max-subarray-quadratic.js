@@ -1,23 +1,17 @@
 function maxSubarraySum(arr, k) {
-  let total = 0;
-  let highest = 0;
-  // console.log(arr);
-  for (let i = 0; i < arr.length; i++) {
-    let current = arr[i];
-    console.log('current number: ', current);
-    for (let j = i; j < k; j++) {
-      console.log('next k: ', arr[j]);
-      total += arr[j];
-      console.log('total: ', total);
+  let maxSum = -Infinity;
+
+  for (let i = 0; i <= arr.length - k; i++) {
+    let currentSum = 0;
+
+    for (let j = i; j < i + k; j++) {
+      currentSum += arr[j];
     }
-    if (total > highest) {
-      highest = total;
-      console.log('highest: ', highest);
-      total = 0;
-    }
+
+    maxSum = Math.max(maxSum, currentSum);
   }
 
-  console.log('highest outside: ', highest);
+  return maxSum;
 }
 
 module.exports = maxSubarraySum;
