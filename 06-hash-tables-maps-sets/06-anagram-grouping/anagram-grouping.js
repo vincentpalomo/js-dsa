@@ -1,5 +1,4 @@
 function anagramGrouping(words) {
-  console.log(words);
   // create a new map variable
   // loop thru the words array
   // sort the word
