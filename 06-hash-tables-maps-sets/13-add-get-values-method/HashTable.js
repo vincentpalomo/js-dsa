@@ -53,10 +53,7 @@ class HashTable {
     const index = this._hash(key, this.limit);
 
     if (this.storage[index]) {
-      if (
-        this.storage[index].length === 1 &&
-        this.storage[index][0][0] === key
-      ) {
+      if (this.storage[index].length === 1 && this.storage[index][0][0] === key) {
         delete this.storage[index];
       } else {
         for (let i = 0; i < this.storage[index].length; i++) {
@@ -96,7 +93,18 @@ class HashTable {
     this.storage = [];
   }
 
- // ADD getValues() METHOD
+  getValues(key) {
+    const values = [];
+
+    for (let i = 0; i < this.storage.length; i++) {
+      if (this.storage[i]) {
+        for (const [key, value] of this.storage[i]) {
+          values.push(value);
+        }
+      }
+    }
+    return values;
+  }
 }
 
 module.exports = HashTable;
