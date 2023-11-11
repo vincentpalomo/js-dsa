@@ -16,6 +16,6 @@ bst.insert(2);
 
 bst.remove(5);
 
-console.log(bst.lookup(5));
+console.log(bst.lookup(10));
 
 bst.printTree();
