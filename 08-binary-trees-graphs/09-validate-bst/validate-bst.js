@@ -13,6 +13,7 @@ function isValidBST(root) {
 
     if ((min !== null && node.value <= min) || (max !== null && node.value >= max)) return false;
 
+    // recursive case
     return isValidSubtree(node.left, min, node.value) && isValidSubtree(node.right, node.value, max);
   }
 
