@@ -11,19 +11,19 @@ function isPalindromeQueueStack(str) {
   // return true
   // else false
 
-  const forward = new Queue();
-  const reversed = new Stack();
+  const charQueue = new Queue();
+  const charStack = new Stack();
 
   const formattedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
   for (let i = 0; i < formattedStr.length; i++) {
-    const element = formattedStr.charAt(i);
-    forward.enqueue(element);
-    reversed.push(element);
+    const element = formattedStr[i];
+    charQueue.enqueue(element);
+    charStack.push(element);
   }
 
-  while (!forward.isEmpty()) {
-    if (forward.dequeue() !== reversed.pop()) {
+  while (!charQueue.isEmpty()) {
+    if (charQueue.dequeue() !== charStack.pop()) {
       return false;
     }
   }
