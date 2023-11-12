@@ -1,25 +1,25 @@
 function selectionSort(arr) {
-  // outer loop to iterate thru each element
+  // loop thru the input arr except for the last element
+  // set the minIndex to the current index
+  // nested loop tru the input arr starting at the next element of i
+  // if the current j element is less than the min element
+  // set minIndex to j
+  // if minIndex is not equal to current index
+  // using destructuring assignment, swap the values at the two indices in the array [i, minIndex] = [minIndex, i]
+  // return arr
   for (let i = 0; i < arr.length - 1; i++) {
-    // assume the current index is the minium
     let minIndex = i;
+    console.log(minIndex);
 
-    // inner loop to find the index of the minimum element in the unsorted part of the arr
     for (let j = i + 1; j < arr.length; j++) {
-      // compare the current element with the element at the minIndex
       if (arr[j] < arr[minIndex]) {
-        // if a smaller element is found, update minIndex
         minIndex = j;
       }
     }
-
-    // swap the found minimum element with the first element if they are different
     if (minIndex !== i) {
       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
     }
   }
-
-  // return sorted array
   return arr;
 }
 
