@@ -12,7 +12,7 @@ const depthFirstTraversal = require('./graph-depth-first');
 
 const graph = new Graph();
 
-// Add vertices
+// add vertices
 graph.addVertex('A');
 graph.addVertex('B');
 graph.addVertex('C');
@@ -20,7 +20,7 @@ graph.addVertex('D');
 graph.addVertex('E');
 graph.addVertex('F');
 
-// Add edges
+// add edges
 graph.addEdge('A', 'B');
 graph.addEdge('A', 'C');
 graph.addEdge('B', 'D');
@@ -31,4 +31,6 @@ graph.addEdge('E', 'F');
 
 graph.printAdjacencyList();
 
-console.log(depthFirstTraversal(graph, 'A'));
+const result = depthFirstTraversal(graph, 'A');
+
+console.log(result);
