@@ -77,3 +77,23 @@ console.log(result5);
 
 let result6 = same([1, 2, 3, 4, 5], [1, 4, 9, 16, 20]);
 console.log(result6);
+
+function validAnagram3(first, second) {
+  if (first.length !== second.length) return false;
+
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+
+  for (let val of first) frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+  for (let val of second) frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+
+  for (let key in frequencyCounter1) {
+    if (!(key in frequencyCounter2)) return false;
+    if (frequencyCounter2[key] !== frequencyCounter1[key]) return false;
+  }
+
+  return true;
+}
+
+let result7 = validAnagram3('voodoo', 'doooov');
+console.log(result7);
