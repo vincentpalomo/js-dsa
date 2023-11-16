@@ -38,5 +38,25 @@ function countUniqueValues(arr) {
 let result = countUniqueValues([1, 1, 2, 3, 3, 4, 5, 6, 6, 7]); // must return 7
 console.log(result);
 
-let result2 = countUniqueValues([]);
+let result2 = countUniqueValues([]); // return 0
 console.log(result2);
+
+const countUnique = (arr) => {
+  // set i point to 0
+  // loop thru input arr j and start at second index
+  // if value of i is not equal to value j
+  // increment i by 1
+  // swap value of i to j
+  let i = 0;
+
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+  return i + 1;
+};
+
+let result3 = countUnique([1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10]); // return 10
+console.log(result3);
