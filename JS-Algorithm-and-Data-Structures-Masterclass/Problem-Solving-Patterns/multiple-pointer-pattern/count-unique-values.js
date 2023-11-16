@@ -47,6 +47,9 @@ const countUnique = (arr) => {
   // if value of i is not equal to value j
   // increment i by 1
   // swap value of i to j
+
+  if (arr.length === 0) return 0;
+
   let i = 0;
 
   for (let j = 1; j < arr.length; j++) {
@@ -60,3 +63,32 @@ const countUnique = (arr) => {
 
 let result3 = countUnique([1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10]); // return 10
 console.log(result3);
+
+const sumZero = (arr) => {
+  // set left pointer to 0
+  // set right pointer to last index of array
+  // while left is less than right
+  // get the total of arr value left and arr value right
+  // if total equals 0 return the values of left and right
+  // else if total is greater than 0, decrement right
+  // else increment left
+
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    let sum = arr[left] + arr[right];
+    if (sum === 0) {
+      return [arr[left], arr[right]];
+    } else if (sum > 0) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+
+  return undefined;
+};
+
+let result4 = sumZero([-4, -3, -2, -1, 0, 1, 5, 6, 8]); // [3, 5] but return actual values [-1, 1]
+console.log(result4);
