@@ -86,8 +86,7 @@ const sumZero = (arr) => {
       left++;
     }
   }
-
-  return undefined;
+  return;
 };
 
 let result4 = sumZero([-4, -3, -2, -1, 0, 1, 5, 6, 8]); // [3, 5] but return actual values [-1, 1]
