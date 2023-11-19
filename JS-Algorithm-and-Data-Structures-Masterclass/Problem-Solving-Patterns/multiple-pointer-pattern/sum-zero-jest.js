@@ -26,8 +26,6 @@ const sumZero = (arr) => {
       left++;
     }
   }
-
-  return undefined;
 };
 
 module.exports = sumZero;
