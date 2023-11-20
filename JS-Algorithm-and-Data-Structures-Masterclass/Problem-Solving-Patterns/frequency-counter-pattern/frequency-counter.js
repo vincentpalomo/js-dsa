@@ -17,7 +17,7 @@ function same(arr1, arr2) {
 
   for (let key in frequencyCounter1) {
     if (!(key ** 2 in frequencyCounter2)) return false;
-    if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) return false;
+    if (frequencyCounter1[key] !== frequencyCounter2[key ** 2]) return false;
   }
 
   return true;
