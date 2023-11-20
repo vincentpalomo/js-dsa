@@ -17,7 +17,7 @@ function validAnagram(str1, str2) {
 
   for (let key in frequencyCounter1) {
     if (!(key in frequencyCounter2)) return false;
-    if (frequencyCounter2[key] !== frequencyCounter1[key]) return false;
+    if (frequencyCounter1[key] !== frequencyCounter2[key]) return false;
   }
 
   return true;
