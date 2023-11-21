@@ -1,4 +1,4 @@
-const maxSubarraySum = require('./maxSubarraySum-naive');
+const maxSubarraySum = require('./maxSubarraySum');
 
 test('The max sum of [1, 2, 5, 2, 8, 1, 5] at 2 consecutive elements is 10', () => {
   expect(maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2)).toBe(10);
