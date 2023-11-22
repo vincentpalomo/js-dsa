@@ -21,28 +21,24 @@ const maxSubarraySum = (arr, num) => {
   // }
   // return maxSum;
 
-  let maxSum = 0;
-  let tempSum = 0;
+  let max = 0;
+  let temp = 0;
 
   if (num > arr.length) return null;
 
-  for (let i = 0; i < num; i++) {
-    maxSum += arr[i];
-  }
+  for (let i = 0; i < num; i++) max += arr[i];
 
-  console.log(maxSum);
-
-  tempSum = maxSum;
-
-  console.log(tempSum);
+  temp = max;
 
   for (let i = num; i < arr.length; i++) {
-    console.log(`${tempSum} - ${arr[i - num]} + ${arr[i]}`);
-    tempSum = tempSum - arr[i - num] + arr[i];
-    console.log(tempSum);
-    maxSum = Math.max(maxSum, tempSum);
+    temp = temp - arr[i - num] + arr[i];
+
+    max = Math.max(max, temp);
   }
-  console.log(maxSum);
+
+  console.log(max);
+
+  return max;
 };
 
 maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 3);
