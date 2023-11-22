@@ -3,10 +3,12 @@ function same(arr1, arr2) {
   // check if the lengths of both arrays are not equal, return false
   // create two frequencyCounters for each array
   // populate frequencyCounter1 and frequencyCounter2
+  // loop thru frequencyCounter1 for each key
   // check if the square of each key in freq1 exist in freq2 with the same count
   // if the square of key in arr1 is not present in arr2, return false
   // if the count of the squared value in arr2 is not the same as in arr1, return false
   // if all conditions are met, return true
+
   if (arr1.length !== arr2.length) return false;
 
   let frequencyCounter1 = {};
