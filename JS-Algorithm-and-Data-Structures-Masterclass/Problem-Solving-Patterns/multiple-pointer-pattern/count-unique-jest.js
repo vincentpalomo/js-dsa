@@ -25,4 +25,7 @@ const countUniqueValues = (arr) => {
   return i + 1;
 };
 
+let result = countUniqueValues([1, 2, 2, 3]); // return 3
+console.log(result);
+
 module.exports = countUniqueValues;
