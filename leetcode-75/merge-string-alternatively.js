@@ -44,3 +44,5 @@ const mergeStringAlternatively = (word1, word2) => {
 
 let result = mergeStringAlternatively('abc', 'pqr');
 console.log(result);
+
+module.exports = mergeStringAlternatively;
