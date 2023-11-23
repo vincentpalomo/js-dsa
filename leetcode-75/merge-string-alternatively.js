@@ -22,24 +22,35 @@ const mergeStringAlternatively = (word1, word2) => {
   // if word1 is greater return result and append the substring of word1 at n
   // else return result and append the substring of word2 at n
 
+  // let result = '';
+
+  // let n1 = word1.length;
+  // let n2 = word2.length;
+
+  // let n = Math.min(n1, n2);
+
+  // for (let i = 0; i < n; i++) {
+  //   result += word1[i] + word2[i];
+  // }
+
+  // if (n1 === n2) return result;
+
+  // if (n1 > n2) {
+  //   return result + word1.substring(n);
+  // } else {
+  //   return result + word2.substring(n);
+  // }
+
+  // refactor
+
   let result = '';
 
-  let n1 = word1.length;
-  let n2 = word2.length;
-
-  let n = Math.min(n1, n2);
-
-  for (let i = 0; i < n; i++) {
-    result += word1[i] + word2[i];
+  for (let i = 0; i < Math.max(word1.length, word2.length); i++) {
+    if (i < word1.length) result += word1[i];
+    if (i < word2.length) result += word2[i];
   }
 
-  if (n1 === n2) return result;
-
-  if (n1 > n2) {
-    return result + word1.substring(n);
-  } else {
-    return result + word2.substring(n);
-  }
+  return result;
 };
 
 let result = mergeStringAlternatively('abc', 'pqr');
