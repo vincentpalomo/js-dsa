@@ -27,3 +27,42 @@ function same(arr1, arr2) {
 
 let result = same([1, 2, 3, 4, 5], [9, 1, 4, 16, 25]);
 console.log(result);
+
+function sameF() {
+  let args = [...arguments];
+
+  let f1 = {};
+
+  for (let val of args) f1[val] = (f1[val] || 0) + 1;
+
+  for (let key in f1) {
+    if (f1[key] > 1) return true;
+  }
+
+  return false;
+}
+
+let result2 = sameF('a', 'b', 'c', 'd');
+console.log(result2);
+
+const sameNums = (n1, n2) => {
+  let num1 = n1.toString();
+  let num2 = n2.toString();
+
+  if (num1.length !== num2.length) return false;
+
+  let f1 = {};
+  let f2 = {};
+
+  for (let val of num1) f1[val] = (f1[val] || 0) + 1;
+  for (let val of num2) f2[val] = (f2[val] || 0) + 1;
+
+  for (let key in f1) {
+    if (!(key in f2)) return false;
+  }
+
+  return true;
+};
+
+let result3 = sameNums(123, 321);
+console.log(result3);
