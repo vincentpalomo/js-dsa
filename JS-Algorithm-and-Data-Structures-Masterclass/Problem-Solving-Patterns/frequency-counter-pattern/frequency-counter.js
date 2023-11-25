@@ -31,18 +31,18 @@ console.log(result);
 function sameF() {
   let args = [...arguments];
 
-  let f1 = {};
+  let seen = {};
 
-  for (let val of args) f1[val] = (f1[val] || 0) + 1;
+  for (let val of args) seen[val] = (seen[val] || 0) + 1;
 
-  for (let key in f1) {
-    if (f1[key] > 1) return true;
+  for (let key in seen) {
+    if (seen[key] > 1) return true;
   }
 
   return false;
 }
 
-let result2 = sameF('a', 'b', 'c', 'd');
+let result2 = sameF('a', 'b', 'c', 'a');
 console.log(result2);
 
 const sameNums = (n1, n2) => {
