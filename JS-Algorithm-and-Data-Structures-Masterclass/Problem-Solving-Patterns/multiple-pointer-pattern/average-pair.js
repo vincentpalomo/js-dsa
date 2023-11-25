@@ -10,6 +10,18 @@
 //     averagePair([],4) // false
 
 function averagePair(nums, target) {
+  // create two pointers, left (0 index) and right (last index of array)
+  // if the nums array equals 0 return false
+  // while left is less than right
+  // get the current sum of left and right
+  // get the current average of current sum
+  // if current average is equal to target
+  // return true
+  // else if current average is less than target
+  // increment left
+  // else decrement right (current average is greater than target)
+  // return false if nothing matches
+
   if (nums.length === 0) return false;
 
   let left = 0;
@@ -27,8 +39,6 @@ function averagePair(nums, target) {
       right--;
     }
   }
-
-  return false;
 }
 
 const result = averagePair([1, 2, 3], 2.5);
