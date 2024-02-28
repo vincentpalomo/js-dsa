@@ -23,7 +23,7 @@ class LinkedList {
   };
 };
 
-function detectLoop(head) {
+export function detectLoop(head) {
   let seen = new Set();
 
   while (head != null) {
@@ -39,4 +39,4 @@ function detectLoop(head) {
   return false;
 };
 
-
+module.exports = {Node, LinkedList}
