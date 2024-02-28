@@ -14,7 +14,7 @@ class LinkedList {
     this.length = 0
   };
 
-  function push(data) {
+  push(data) {
     let newNode = new Node(data);
 
     newNode.next =  head;
@@ -38,3 +38,5 @@ function detectLoop(head) {
 
   return false;
 };
+
+
