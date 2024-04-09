@@ -43,17 +43,43 @@ const mergeStringAlternatively = (word1, word2) => {
 
   // refactor
 
+  // let result = '';
+
+  // for (let i = 0; i < Math.max(word1.length, word2.length); i++) {
+  //   if (i < word1.length) result += word1[i];
+  //   if (i < word2.length) result += word2[i];
+  // }
+
+  // return result;
+
   let result = '';
 
-  for (let i = 0; i < Math.max(word1.length, word2.length); i++) {
-    if (i < word1.length) result += word1[i];
-    if (i < word2.length) result += word2[i];
+  i = 0;
+  j = 0;
+
+  while (i < word1.length && j < word2.length) {
+    result += word1[i];
+    result += word2[j];
+    i++;
+    j++;
   }
+
+  while (i < word1.length) {
+    result += word1[i];
+    i++;
+  }
+
+  while (j < word2.length) {
+    result += word2[j];
+    j++;
+  }
+
+  console.log(result);
 
   return result;
 };
 
-let result = mergeStringAlternatively('abc', 'pqr');
+let result = mergeStringAlternatively('abc', 'pqraaaa');
 console.log(result);
 
 module.exports = mergeStringAlternatively;
