@@ -26,6 +26,7 @@ let reverseVowels = function (s) {
 
   while (i < j) {
     console.log(i, j);
+    console.log(ss[i], ss[j]);
     if (vowels.has(ss[i]) && vowels.has(ss[j])) {
       [ss[i], ss[j]] = [ss[j], ss[i]];
       i++;
@@ -40,5 +41,5 @@ let reverseVowels = function (s) {
   return ss.join('');
 };
 
-let result = reverseVowels('leetcode');
+let result = reverseVowels('hello');
 console.log(result);
