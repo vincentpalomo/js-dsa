@@ -9,19 +9,41 @@
 // Output: "ABC"
 
 const greatestCommonDivisor = (str1, str2) => {
+  // if (str1 + str2 !== str2 + str1) return '';
+
+  // let n1 = str1.length;
+  // let n2 = str2.length;
+
+  // let gcds = function (x, y) {
+  //   if (!y) return x;
+  //   return gcds(y, x % y);
+  // };
+
+  // let div = gcds(n1, n2);
+
+  // return str1.slice(0, div);
+
   if (str1 + str2 !== str2 + str1) return '';
 
-  let n1 = str1.length;
-  let n2 = str2.length;
+  let div = gcd(str1.length, str2.length);
 
-  let gcds = function (x, y) {
-    if (!y) return x;
-    return gcds(y, x % y);
-  };
+  console.log(div);
 
-  let div = gcds(n1, n2);
+  function gcd(a, b) {
+    if (b > a) {
+      [a, b] = [b, a];
+    }
 
-  return str1.slice(0, div);
+    while (b !== 0) {
+      let remainder = a % b;
+      a = b;
+      b = remainder;
+    }
+
+    return a;
+  }
+
+  return str1.substring(0, div);
 };
 
 let result = greatestCommonDivisor('ABCABC', 'ABC'); // return 'ABC'
