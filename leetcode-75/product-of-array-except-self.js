@@ -21,23 +21,48 @@
 //     The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 
 const productExceptSelf = function (nums) {
+  // let n = nums.length;
+
+  // const prefix = new Array(n).fill(1); // makes a new array filled with 1
+  // const suffix = new Array(n).fill(1);
+
+  // for (let i = 1; i < n; i++) {
+  //   prefix[i] = prefix[i - 1] * nums[i - 1];
+  // }
+
+  // for (let i = n - 2; i >= 0; i--) {
+  //   suffix[i] = suffix[i + 1] * nums[i + 1];
+  // }
+
+  // console.log(prefix, suffix)
+
+  // const result = [];
+  // for (let i = 0; i < n; i++) {
+  //   result[i] = prefix[i] * suffix[i];
+  // }
+
+  // return result;
+
+  /* REFACTOR */
   let n = nums.length;
-
-  const prefix = new Array(n).fill(1); // makes a new array filled with 1
-  const suffix = new Array(n).fill(1);
+  let prefix = 1;
+  const result = new Array(n);
 
   for (let i = 0; i < n; i++) {
-    prefix[i] = prefix[i - 1] * nums[i - 1];
+    result[i] = prefix;
+    prefix *= nums[i];
   }
 
-  for (let i = n - 2; i >= 0; i--) {
-    suffix[i] = suffix[i + 1] * nums[i + 1];
+  console.log(result);
+
+  let suffix = 1;
+
+  for (let i = n - 1; i >= 0; i--) {
+    result[i] *= suffix;
+    suffix *= nums[i];
   }
 
-  const result = [];
-  for (let i = 0; i < n; i++) {
-    result[i] = prefix[i] * suffix[i];
-  }
+  console.log(result);
 
   return result;
 };
