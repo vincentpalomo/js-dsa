@@ -19,7 +19,20 @@
 // Explanation: The triplet (3, 4, 5) is valid because nums[3] == 0 < nums[4] == 4 < nums[5] == 6.
 
 let increasingTriplet = function (nums) {
-  console.log(nums);
+  let small = Number.MAX_SAFE_INTEGER;
+  let big = Number.MAX_SAFE_INTEGER;
+
+  for (let num of nums) {
+    console.log(num);
+    if (num <= small) {
+      small = num;
+    } else if (num <= big) {
+      big = num;
+    } else {
+      return true;
+    }
+  }
+
   return false;
 };
 
